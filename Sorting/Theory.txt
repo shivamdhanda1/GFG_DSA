@@ -1,0 +1,4 @@
+A stable sort preserves the relative order of equal elements.
+If two items have the same key/value , they stay in the same order after sorting as they were before.
+
+An Unstable sort may change the relative order of equal elements.
