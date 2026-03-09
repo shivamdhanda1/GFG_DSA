@@ -43,7 +43,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void Efficient(int a[], int b[], int m, int n) {
+void Efficient(int a[], int b[], int m, int n) { 
 
 int i = 0, j = 0;
 
@@ -86,3 +86,4 @@ int main(){
   Efficient(a,b,m,n);
   return 0;
 }
+
