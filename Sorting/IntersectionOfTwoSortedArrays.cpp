@@ -1,17 +1,19 @@
+// We have to print all the elements which are common in both the arrays and if there is no common element then we are going to print nothing 
+
+// Naive Solution
+// Time complexity = O(n * m)
 #include <bits/stdc++.h>
 using namespace std;
 
-void Naive(int a[], int m, int b[], int n) {
-  int count;
-  int l = 0;
+void intersection(int a[], int b[], int m, int n) {
   for(int i = 0; i < m; i++) {
-    count = 0; 
-    
-    for(int j = l; j < n; j++) {
-      if(a[i] == b[j]) count++;
-      l = j;
+    if(i > 0 && a[i] == a[i-1]) continue;
+    for(int j = 0; j < n; j++) {
+      if(a[i] == b[j]) {
+        cout<<a[i];
+        break;
+      }
     }
-    if(count > 0) cout<<a[i];
   }
 }
 
@@ -20,5 +22,7 @@ int main(){
   int b[] = {2,20,20,20};
   int m = 5;
   int n = 4;
+  intersection(a,b,m,n);
   return 0;
 }
+

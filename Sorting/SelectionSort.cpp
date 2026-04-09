@@ -1,5 +1,5 @@
 // time complexity = Theta(n ^ 2)
-// It does less memory writes compared to Qucik Sort , Merge Sort, Insertion Sort, etc. 
+// It does less memory writes compared to Quick Sort , Merge Sort, Insertion Sort, etc. 
 //But  Cycle sort is optimal in terms of memory writes. 
 //Basic idea for HeapSort
 // Not Stable (i.e order of equal element may change)
@@ -10,14 +10,13 @@
 //Naive Implementation
 
 // #include <bits/stdc++.h>
-// using namespace std;
+//  using namespace std; 
 
 // void SelectSort(int arr[], int n) {
 //   const int INF = INT_MAX;
 //   int temp[n];
-  
 //   for(int i = 0; i < n; i++) { 
-//     int min_ind = 0;
+//     int min_ind = 0;              
 //     for(int j = 1; j < n; j++) {
 //       if(arr[j] < arr[min_ind]) {
 //         min_ind = j;
