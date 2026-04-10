@@ -1,3 +1,5 @@
+Time Complexity = Theta(1)
+
 Node *delHead(Node *head) {
   if(head == NULL) return NULL;
   if(head->next == NULL) {

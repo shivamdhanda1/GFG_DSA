@@ -1,0 +1,20 @@
+Time complexity = Theta(n)
+
+// We can reduce time complexity of deleting the last node or last pointer by maintaining the tail pointer or you have access to last node(i.e it is passes as an argument then you don't need to run the loop ) . If you maintaining the tail pointer then deleting the last node becomes - Theta(1) operation
+Disadvantages - all operations like insert begin , insert end , they have to also ensure that tail pointer is properly updated
+
+
+Node *delNode(Node *head) {
+  if(head == NULL) return NULL;
+  if(head->next == NULL) {
+    delete head;
+    return NULL;
+  }
+  Node *curr = head;
+  while(curr->next != NULL) { 
+    curr = curr->next;
+  }
+  curr->prev->next = NULL;
+  delete curr;
+  return head;
+}
