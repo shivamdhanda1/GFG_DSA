@@ -8,5 +8,6 @@ Node *reverseDwqL(Node *head) {
     curr = curr->prev;
   }
   return prev->prev;
-
 }
+
+
