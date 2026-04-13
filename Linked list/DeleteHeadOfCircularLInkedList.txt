@@ -1,0 +1,17 @@
+// Copy data of next node to head and after copying it we can delete the next node in theta(1) time as we can always delete the next node if we have pointer to the previous node that is why we copy the data so we can delete the next in theta(1) time.
+
+// Time complexity = Theta(1) 
+Node *delHead(Node *head) {
+  if(head == NULL) return NULL;
+  if(head->next == head) {
+    delete head;
+    return NULL;
+  }
+  else {
+    head->data = head->next->data;
+    Node *temp = head->next;
+    head->next = head->next->next;
+    delete temp;
+    return head;
+  }
+}
