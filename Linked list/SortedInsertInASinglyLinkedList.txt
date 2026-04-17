@@ -1,0 +1,25 @@
+// My Code 
+// time complexity if we are inserting in front is O(1) and if we are inserting at end then O(N)
+// IN general we can say if we are inserting the node at position - pos then time complexity is O(pos)
+Node* SortInsert(Node* head, int x) {
+    Node* temp = new Node(x);
+
+    if (head == NULL) return temp;
+  // Curr null is handle by this for better understanding look below 
+    if (head->data > x) {
+        temp->next = head;
+        return temp;
+    }
+
+    Node* curr = head;
+
+    while (curr->next != NULL && curr->next->data < x) {
+        curr = curr->next;
+    }
+    // When we are accessing something->next , we need to ensure that this something is not null otherwise there will be problems. Since we are accessing curr->next data we need to make ensure curr is not null ,
+
+    temp->next = curr->next;
+    curr->next = temp;
+
+    return head;
+}

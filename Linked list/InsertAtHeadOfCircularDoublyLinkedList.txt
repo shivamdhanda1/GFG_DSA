@@ -1,0 +1,15 @@
+Node *insertHead(Node *head, int x) {
+  Node *temp = new Node(x); 
+  if(head == NULL) {
+    temp->next = temp;
+    temp->prev = temp;
+    return temp;
+  }
+  else {
+    temp->next =head;
+    temp->prev = head->prev;
+    head->prev->next = temp;
+    head->prev = temp;
+    return temp;
+  }
+}

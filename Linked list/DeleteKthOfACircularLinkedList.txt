@@ -1,0 +1,16 @@
+Node *delKth(Node * head, int k) {
+  if(head == NULL) return NULL
+  if(k == 1) return deleteHead(head); //IN  previous question
+  Node *curr = head;
+
+   for(int i = 0; i < k-2; i++) {
+    curr = curr->next;
+   }
+  Node *temp = curr->next;
+  curr->next = curr->next->next;
+  delete temp;
+  return head;
+}
+
+// Condition is that k is smaller than or equal to no. of nodes
+// it is better to use for loop when you know how many times you have to iterate the loop here we know that we have to iterate k - 2 times
