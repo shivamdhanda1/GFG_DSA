@@ -1,0 +1,19 @@
+Node *delKth(Node *head, int k) {
+  Node *curr = head;
+  int ind = 1;
+  while(ind < k) {
+    curr = curr->next;
+    ind++;
+  }
+  
+
+  while()
+}
+
+
+
+
+
+
+
+
