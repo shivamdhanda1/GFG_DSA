@@ -1,6 +1,7 @@
 // My Code 
 // time complexity if we are inserting in front is O(1) and if we are inserting at end then O(N)
 // IN general we can say if we are inserting the node at position - pos then time complexity is O(pos)
+
 Node* SortInsert(Node* head, int x) {
     Node* temp = new Node(x);
 
