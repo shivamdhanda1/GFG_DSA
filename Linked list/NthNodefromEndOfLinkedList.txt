@@ -18,11 +18,14 @@ class Solution {
             return -1;
         }
         
-        int m = count - k;
-        for(int i = 0; i < m; i++) {
+        int m = count - k + 1;
+        for(int i = 1; i < m; i++) {
             curr = curr->next;
     }
     
     return curr->data;
     }
 };
+
+// Method 2 (Using Two Pointers/References)
+// No need to find the length of the linked list
