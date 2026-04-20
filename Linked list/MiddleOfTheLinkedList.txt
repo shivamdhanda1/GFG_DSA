@@ -27,9 +27,10 @@ public:
 // Based on idea of slow and fast pointers i.e we maintain two pointers or references
 // slow moves 1 node at a time and fast moves two node at a time so when fast reaches the end , slow reaches the middle // here we have to handle both even and odd linked list 
 // here fast != NULL makes sure that NULL->next is never accessed , so preventing segmentation fault.
-Void printMiddle(Node *head) {
-    if(head == NULL ) return NUll;
-    Node *slow = head, fast = head;
+
+void printMiddle(Node *head) {
+    if(head == NULL ) return;
+    Node *slow = head, *fast = head;
     while(fast != NULL && fast->next != NULL) {
         slow = slow->next;
         fast = fast->next->next;
