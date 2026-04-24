@@ -1,0 +1,34 @@
+// Naive Solution 
+// It requires two traversals of linked list and we are using auxilary space, so not an efficient solution
+// Aux Space = O(n)
+
+Node *revList(Node *head) {
+  vector<int> arr;
+  for(Node *curr = head; curr != NULL; curr = curr->next) {
+    arr.push_back(curr->data);
+  }
+  for(Node *curr = head; curr != NULL; curr = curr->next) {
+    curr->data = arr.back();
+    arr.pop_back();
+  }
+  return head;
+}
+
+// Efficient solution 
+// Time complexity = O(n) , where n is the no. of nodes in linked list which we are travelling one by 1
+// Aux space = O(1) i.e constant space 
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+    ListNode *curr = head;
+    ListNode *prev = NULL;
+    while(curr != NULL) {
+        ListNode *Next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = Next;
+    }
+    return prev;
+    }
+};
