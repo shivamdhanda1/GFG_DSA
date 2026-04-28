@@ -1,0 +1,14 @@
+// You have to assume that the node to be deleted is never the last node means - You are guaranteed that the node you want to delete has a next node.
+i.e it can be any node in the middle or any node between 1 to n-1 node, if n is the total no. of nodes in the linked list.
+
+Void  *DelNode(Node *ptr) {
+  Node *temp = ptr->next;
+  ptr->data = temp->data;
+  ptr->next = temp->next;
+  delete(temp);
+  
+}
+
+// We are copying the data of the next node into the current node 
+// This trick will not gonna work if the node to be deleted is the last node.
+Because if you tried copying the next arrow data of the last node you will get segmentation fault because next of last node is null 
