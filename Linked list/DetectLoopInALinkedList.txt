@@ -1,0 +1,8 @@
+// We need to check whether the given linked list contains the loop or not i.e next of last node instead of pointing to null , pointing to one of the earlier nodes.
+
+Node * detLoop(Node *head) 
+
+
+
+
+

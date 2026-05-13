@@ -1,0 +1,47 @@
+// We have a bucket variable and after that we are goint to create an array of linked list
+// To create an array of linked list in C++ we have created a pointer table , and this pointer is of type list 
+
+Struct MyHash 
+{
+int BUCKET;
+list <int> *table
+MyHash(int b) 
+{
+BUCKET = b;
+table = new list<int>[b];
+}
+
+};
+
+
+// Insert function
+
+void insert(int key) {
+int i = key % BUCKET;
+table[i].push_back(key);
+}
+
+
+
+// Remove function 
+
+void remove(int key) {
+  int i = key % BUCKET;
+  table[i].remove(key);
+}
+
+
+
+// Search function 
+
+bool search(int key) {
+int i = key % BUCKET;
+for(auto x : table[i]) {
+ if(x == key) {
+  return true;
+ }
+ return false;
+}
+
+} 
+
