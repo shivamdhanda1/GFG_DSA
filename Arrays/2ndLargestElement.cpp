@@ -3,6 +3,7 @@
 
 // My code - this logic will not work if the largest element is at index 0
 
+
 // int Largest2nd(int arr[], int n)
 // {
 //     int i;
@@ -119,6 +120,7 @@ for(int i  = 1; i < n; i++) {
 }
 return res;
 }
+
 
 int main(){
     int arr[] = {22,54,87,22,45,89,93};
