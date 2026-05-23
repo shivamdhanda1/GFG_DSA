@@ -1,0 +1,49 @@
+// Naive Solution 
+Time complexity = O(n)
+Aux Space = O(1)
+
+int distinct(vector<int>& arr) {
+    int count = 0;
+    for(int i = 0; i < arr.size(); i++) {
+        bool flag = false;
+        for(int j = 0; j < i; j++) {
+            if(arr[i] == arr[j]) {
+                flag = true;
+                break;
+            }
+        }
+        if(flag == false) {
+            count++;
+        }
+    }
+    return count;
+    
+}
+
+
+// Efficient Solution
+Time complexity = Theta(n)
+Aux Space = O(n)
+// insert function only insert if item is not present if it already present then it doesn't insert it.
+
+int distinct(vector<int>& arr) {
+unordered_set<int> s;
+for(int i = 0; i < arr.size(); i++) {
+    s.insert(arr[i]);
+}
+ return s.size();
+    
+}
+
+// More improved version 
+Time complexity = Theta(n)
+Aux space = O(n)
+// We can directly create unordered set from array elements and it's going to have distinct elements only as set doesn't allow duplicate elements 
+//i.e we passed iterators from which range we have to insert the elements 
+
+int distinct(vector<int>& arr) {
+unordered_set<int> s(arr.begin(), arr.end());
+
+ return s.size();
+    
+}
