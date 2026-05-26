@@ -14,11 +14,47 @@ void printFreq(int arr[], int n) {
     }
     if(flag == true) continue;
     int freq = 1;
-    for(int l = i+1; l < n; l++) {
+    for(int l = i+1; l < n; l++) {                
       if(arr[i] == arr[l]) {
-        freq++;
-      }
+        freq++;                                          
+      }                                             
     }
     cout<<arr[i]<<" "<<freq<<endl;
   }
 }
+
+// Efficient solution 
+ // here the order of printing is not predictable as we have used hashing behind it and hashing order depends on the hash function which user can't predict 
+ // time complexity = theta(n)
+ // Aux space = O(n) // i.e when element is 1 then hashmap only stroes 1 element and in worst case hash map stores n elements 
+
+ int countFreq(int arr[], int n) {
+  unordered_map<int,int> h;
+  for(int i = 0; i < n; i++) {
+    h[arr[i]]++; // this is array index operator what it does is that if the key is not present then this array index operator inserts the key with value 0 and then you are incrementing here so , first the value will be 0 after incrementing it will become 1
+  }
+  for(auto e : h) {
+    cout<<e.first<<" "<<e.second<<endl;
+  }
+ }
+
+
+// Gfg Efficient Solution
+class Solution {
+  public:
+    vector<vector<int>> countFreq(vector<int>& arr) {
+        
+        vector<vector<int>> ans;
+        
+        unordered_map<int,int> mp;
+        
+        for(int num : arr) {
+            mp[num]++;
+        }
+        
+        for(auto &i : mp) {
+            ans.push_back({i.first,i.second});
+        }
+        return ans;
+    }
+};
