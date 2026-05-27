@@ -1,0 +1,22 @@
+// Time = Theta(m+n)
+// Aux Space = O(m+n)
+
+class Solution {
+  public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        unordered_set<int> m(a.begin(), a.end());
+        vector<int> an;
+        
+        
+        for(auto l: b) {
+            m.insert(l);
+        }
+        
+        for(auto f: m) {
+            an.push_back(f);
+        }
+        
+        return an;
+        
+    }
+};

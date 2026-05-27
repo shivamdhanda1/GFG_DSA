@@ -1,0 +1,31 @@
+// Naive Solution
+// Time = O(m * n)
+
+void intersection(int a[], int m, int b[], int n) {
+  for(int i = 0; i < m; i++) {
+    bool flag = false;
+
+    for(int j = 0; j < n; j++) {
+      if(a[i] == b[j]) {
+        flag = true;
+        break;
+      }
+    }
+    if(flag == true) {
+      cout<<a[i]<<" ";
+    }
+  }
+}
+
+// Efficient Solution 
+// Time = Theta(m + n)
+// Aux Space = Theta(n)
+
+void intersection(int a[], int m, int b[], int n) {
+  unordered_set<int> s(b,b+n);
+  for(int i = 0; i < m; i++) {
+    if(s.find([i]) != s.end()) {
+      cout<<a[i]<<" ";
+    }
+  }
+}
