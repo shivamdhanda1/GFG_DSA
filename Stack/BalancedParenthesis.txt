@@ -1,3 +1,6 @@
+// Time = O(n)
+// Aux Space = O(n)
+
 
 bool matching(char a, char b) 
 {
